@@ -141,15 +141,16 @@ func (ctx *textifyTraverseCtx) handleElementNode(node *html.Node) error {
 			return err
 		}
 
-		hrefLink := ""
-		if attrVal := getAttrVal(node, "href"); attrVal != "" {
-			attrVal = ctx.normalizeHrefLink(attrVal)
-			if attrVal != "" {
-				hrefLink = "( " + attrVal + " )"
-			}
-		}
+		// hrefLink := ""
+		// if attrVal := getAttrVal(node, "href"); attrVal != "" {
+		// 	attrVal = ctx.normalizeHrefLink(attrVal)
+		// 	if attrVal != "" {
+		// 		hrefLink = "( " + attrVal + " )"
+		// 	}
+		// }
 
-		return ctx.emit(hrefLink)
+		// return ctx.emit(hrefLink)
+		return nil
 
 	case atom.P, atom.Ul, atom.Table:
 		if err := ctx.emit("\n\n"); err != nil {
